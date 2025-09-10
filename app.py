@@ -45,7 +45,7 @@ if "cache" not in st.session_state:
 
 def _num_input(scn,key,label,default,fmt="%.4f",**kw):
     scn.setdefault(key,default)
-    scn[key]=st.number_input(label,value=scn[key],=fmt,
+    scn[key]=st.number_input(label,value=scn[key], format=fmt,
                              key=f"{key}_{scn['_name']}",**kw)
 
 # ---------------- Sidebar ----------------
