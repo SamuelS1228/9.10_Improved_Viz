@@ -43,7 +43,7 @@ if "scenarios" not in st.session_state:
 if "cache" not in st.session_state:
     st.session_state["cache"] = {}
 
-def _num_input(scn,key,label,default,fmt="%.4f",**kw):
+def _num_input(scn,key,label,default,fmt.4f",**kw):
     scn.setdefault(key,default)
     scn[key]=st.number_input(label,value=scn[key], format=fmt,
                              key=f"{key}_{scn['_name']}",**kw)
@@ -96,9 +96,9 @@ def sidebar(scn):
         with st.expander("🇨🇦 Canada Routing Controls", False):
             scn["can_en"] = st.checkbox("Enable Canada routing (Toronto-facing rule)", value=scn.get("can_en", False), key=f"can_en_{name}")
             cols = st.columns(2)
-            scn["can_lon"] = cols[0].number_input("Default longitude threshold (east faces Canada)", value=float(scn.get("can_lon", -105.0)), format="%.3f", key=f"can_lon_{name}")
-            scn["can_wh_lon"] = cols[1].number_input("Canada WH Lon", value=float(scn.get("can_wh_lon", -79.3832)), ="%.6f", key=f"can_wh_lon_{name}")
-            scn["can_wh_lat"] = st.number_input("Canada WH Lat", value=float(scn.get("can_wh_lat", 43.6532)), ="%.6f", key=f"can_wh_lat_{name}")
+            scn["can_lon"] = cols[0].number_input("Default longitude threshold (east faces Canada)", value=float(scn.get("can_lon", -105.0)), format.3f", key=f"can_lon_{name}")
+            scn["can_wh_lon"] = cols[1].number_input("Canada WH Lon", value=float(scn.get("can_wh_lon", -79.3832)), format="%.6f", key=f"can_wh_lon_{name}")
+            scn["can_wh_lat"] = st.number_input("Canada WH Lat", value=float(scn.get("can_wh_lat", 43.6532)), format="%.6f", key=f"can_wh_lat_{name}")
             st.caption("If enabled: CAN + (Longitude ≥ threshold) → Canada WH; other CAN and all USA rows → nearest US center.")
             # Per-brand thresholds
             brands = scn.get("brands", [])
